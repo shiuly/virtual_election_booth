@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="5a6623bd-81d2-43aa-b927-83e3c3f0e5a8">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     voter.`vid` AS voter_vid,
+     voter.`fullname` AS voter_fullname,
+     voter.`fathername` AS voter_fathername,
+     voter.`mothername` AS voter_mothername,
+     voter.`address` AS voter_address,
+     voter.`dob` AS voter_dob,
+     voter.`nid` AS voter_nid,
+     voter.`gender` AS voter_gender,
+     voter.`image` AS voter_image,
+     voter.`location` AS voter_location,
+     candidate.`cid` AS candidate_cid,
+     candidate.`candidatename` AS candidate_candidatename,
+     candidate.`location` AS candidate_location,
+     candidate.`party` AS candidate_party,
+     candidate.`image` AS candidate_image
+FROM
+     `voter` voter,
+     `candidate` candidate]]>
+	</queryString>
+	<field name="voter_vid" class="java.lang.Integer"/>
+	<field name="voter_fullname" class="java.lang.String"/>
+	<field name="voter_fathername" class="java.lang.String"/>
+	<field name="voter_mothername" class="java.lang.String"/>
+	<field name="voter_address" class="java.lang.String"/>
+	<field name="voter_dob" class="java.lang.String"/>
+	<field name="voter_nid" class="java.lang.Integer"/>
+	<field name="voter_gender" class="java.lang.String"/>
+	<field name="voter_image" class="java.lang.String"/>
+	<field name="voter_location" class="java.lang.String"/>
+	<field name="candidate_cid" class="java.lang.Integer"/>
+	<field name="candidate_candidatename" class="java.lang.String"/>
+	<field name="candidate_location" class="java.lang.String"/>
+	<field name="candidate_party" class="java.lang.String"/>
+	<field name="candidate_image" class="java.lang.String"/>
+	<group name="voter_location">
+		<groupExpression><![CDATA[$F{voter_location}]]></groupExpression>
+		<groupHeader>
+			<band height="40">
+				<textField>
+					<reportElement style="SubTitle" x="47" y="13" width="506" height="24" forecolor="#000000" uuid="de150de5-c3f9-4c54-a368-d75117083cbd"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{voter_location}]]></textFieldExpression>
+				</textField>
+				<rectangle>
+					<reportElement mode="Opaque" x="0" y="13" width="36" height="24" forecolor="#CCCCCC" backcolor="#CCCCCC" uuid="65743a9d-3d7f-4557-82a5-0c62f67507f0"/>
+				</rectangle>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="6"/>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="70" splitType="Stretch">
+			<image>
+				<reportElement x="275" y="0" width="300" height="64" uuid="f17c07a6-606a-4e4a-a569-d8b5a7245eaf"/>
+				<imageExpression><![CDATA["leaf_banner_gray.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement style="Title" x="0" y="13" width="263" height="33" uuid="10427bb9-60c8-458d-b92a-6efaa833bf1d"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Leaf Gray Title]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="117" y="46" width="157" height="22" uuid="f938d5bd-37e5-4e02-b3a0-2c26de56df53"/>
+				<text><![CDATA[Leaf Gray SubTitle]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="36" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="35" width="555" height="1" uuid="d6aee4b1-ac64-455c-8a80-2f38f8c2b357"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="0" y="19" width="39" height="15" uuid="04e62b1a-2fc6-4d27-91c2-3a8a45b51806"/>
+				<text><![CDATA[voter_vid]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="39" y="19" width="39" height="15" uuid="dc30ee11-86db-461c-9948-da133cc52cb9"/>
+				<text><![CDATA[voter_fullname]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="78" y="19" width="39" height="15" uuid="30612d68-00f7-4215-9129-1923779c5fdc"/>
+				<text><![CDATA[voter_fathername]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="117" y="19" width="39" height="15" uuid="7fb9774b-8c89-4add-94d7-c52159c5432a"/>
+				<text><![CDATA[voter_mothername]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="156" y="19" width="39" height="15" uuid="521457cc-4631-4162-8618-19da6924f149"/>
+				<text><![CDATA[voter_address]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="195" y="19" width="39" height="15" uuid="c66f3c53-c34b-4f72-bedc-443fa41010d5"/>
+				<text><![CDATA[voter_dob]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="234" y="19" width="39" height="15" uuid="0085aec1-cff4-4867-a828-63e1797dc6aa"/>
+				<text><![CDATA[voter_nid]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="273" y="19" width="39" height="15" uuid="edc43f96-f550-4a76-9265-9c2653f8734c"/>
+				<text><![CDATA[voter_gender]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="312" y="19" width="39" height="15" uuid="8084856d-cbf5-46d4-a328-4574020ede93"/>
+				<text><![CDATA[voter_image]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="351" y="19" width="39" height="15" uuid="d709164a-31e4-465a-a29a-6f3cefb4e4ec"/>
+				<text><![CDATA[candidate_cid]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="390" y="19" width="39" height="15" uuid="8b1a5ffe-d5a4-45f9-b35c-961271e94f48"/>
+				<text><![CDATA[candidate_candidatename]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="429" y="19" width="39" height="15" uuid="e1f7107d-be0b-434a-8b9c-a6dbca6ff143"/>
+				<text><![CDATA[candidate_location]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="468" y="19" width="39" height="15" uuid="fa2f4eca-dd1c-470d-a45e-cafc17ddcdc5"/>
+				<text><![CDATA[candidate_party]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="507" y="19" width="39" height="15" uuid="f9c1ed60-cd4d-4856-b4fa-1b3329869f98"/>
+				<text><![CDATA[candidate_image]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="16" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="555" height="1" uuid="8ec591a2-fd00-41b4-9b6b-311e02b3575d"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement style="Detail" x="0" y="0" width="39" height="15" uuid="393b450f-1500-40f8-b554-2db35fa0132d"/>
+				<textFieldExpression><![CDATA[$F{voter_vid}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="39" y="0" width="39" height="15" uuid="f87ea050-6a79-4d43-b10e-571336cce7cb"/>
+				<textFieldExpression><![CDATA[$F{voter_fullname}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="78" y="0" width="39" height="15" uuid="d44007db-5ec9-4435-85da-dfdaf799d3d9"/>
+				<textFieldExpression><![CDATA[$F{voter_fathername}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="117" y="0" width="39" height="15" uuid="1dd68c88-6210-456f-aca6-2f1f11a3f15e"/>
+				<textFieldExpression><![CDATA[$F{voter_mothername}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="156" y="0" width="39" height="15" uuid="320cec81-21c1-4e34-8c93-cc2274612fe4"/>
+				<textFieldExpression><![CDATA[$F{voter_address}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="195" y="0" width="39" height="15" uuid="735327b9-2e07-4890-b16b-68f174d1a88d"/>
+				<textFieldExpression><![CDATA[$F{voter_dob}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="234" y="0" width="39" height="15" uuid="ef45eb16-7b66-4127-aec3-615dadc6d4ab"/>
+				<textFieldExpression><![CDATA[$F{voter_nid}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="273" y="0" width="39" height="15" uuid="d9c2abd5-85be-4dd6-b2e5-2deebcbee22d"/>
+				<textFieldExpression><![CDATA[$F{voter_gender}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="312" y="0" width="39" height="15" uuid="43044fdd-e1be-44a9-a9c3-bc3bf47cc932"/>
+				<textFieldExpression><![CDATA[$F{voter_image}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="351" y="0" width="39" height="15" uuid="5f3340f3-ea5d-4aaa-9fcd-067b20efeeb2"/>
+				<textFieldExpression><![CDATA[$F{candidate_cid}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="390" y="0" width="39" height="15" uuid="08d82ed2-0162-4d86-9edf-a11407a00898"/>
+				<textFieldExpression><![CDATA[$F{candidate_candidatename}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="429" y="0" width="39" height="15" uuid="56353f73-7b1d-46db-9653-7e3300c55551"/>
+				<textFieldExpression><![CDATA[$F{candidate_location}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="468" y="0" width="39" height="15" uuid="308d7975-a8e2-4a22-ab00-46b7ace06846"/>
+				<textFieldExpression><![CDATA[$F{candidate_party}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="507" y="0" width="39" height="15" uuid="1018522b-2cda-4d11-9db9-cb6440703a79"/>
+				<textFieldExpression><![CDATA[$F{candidate_image}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="4eac7c6d-fa24-422c-9f51-ac3c97a5babf"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement style="Column header" x="433" y="0" width="80" height="20" uuid="6eb1f5e6-7c1d-498f-b879-c3ee1f825eb3"/>
+				<textElement textAlignment="Right">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement style="Column header" x="513" y="0" width="40" height="20" uuid="ba301e5f-151c-4778-815e-5ae0c120593d"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement style="Column header" x="0" y="0" width="197" height="20" uuid="284cc840-5936-46ec-ba99-e94a76e1e564"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
