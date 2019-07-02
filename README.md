@@ -7,9 +7,13 @@
   <li>Resper Report</li>
   <li>Jsp</li>
 </ul>
-<h3>JSF and Hibernate using project image below</h3>
+<h3>Show project image below</h3>
 <div style{display: inline;}>
-    <img src="image/01.JPG" width="300" height="448">
-    <img src="image/05.JPG" width="300" height="448">
+    <img src="image/01.JPG" width="700" height="550">
+    <img src="image/05.JPG" width="700" height="550">
+    <img src="image/04.JPG" width="700" height="550">
+    <img src="image/06.JPG" width="700" height="550">
+    <img src="image/08.JPG" width="700" height="550">
+    <img src="image/11.JPG" width="700" height="550">
     
 </div>
